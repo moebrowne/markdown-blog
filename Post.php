@@ -77,7 +77,7 @@ class Post
     public function getMeta()
     {
         if (empty($this->meta) === true && $this->metaExists === true) {
-            $this->meta = json_decode(file_get_contents('posts/'.$this->getName().'.json'));
+            $this->meta = json_decode(file_get_contents($this->metaPath));
         }
 
         return $this->meta;
