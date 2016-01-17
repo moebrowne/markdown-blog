@@ -77,7 +77,15 @@ class Post
     public function getMeta()
     {
         if (empty($this->meta) === true && $this->metaExists === true) {
-            $this->meta = json_decode(file_get_contents($this->metaPath));
+            $metaRaw = json_decode(file_get_contents($this->metaPath));
+
+            // Check values exist and set defaults
+            if (empty($metaRaw->tags) === true || is_array($metaRaw->tags) === false) {
+                $metaRaw->tags = [];
+            }
+
+            $this->meta = $metaRaw;
+
         }
 
         return $this->meta;
