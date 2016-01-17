@@ -1,4 +1,4 @@
-<?php namespace markdownBlog\Post;
+<?php namespace markdownBlog;
 
 use Exception;
 use Parsedown;
