@@ -143,4 +143,18 @@ class Post
 
         return $parsedown->parse($this->getMarkdown());
     }
+
+    public function getAbstract()
+    {
+        $html =  $this->getHTML();
+
+        $paras = explode('</p>', $html);
+
+        return $paras[0];
+    }
+
+    public function getURL()
+    {
+        return '/'.date('y/m/d', $this->getMeta()->date).'/'.str_replace(' ', '-', $this->getMeta()->title);
+    }
 }
