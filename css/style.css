@@ -1,0 +1,59 @@
+body {
+	font-family: Ubuntu;
+	padding: 0;
+	margin: 0 30px;
+	background: #eee;
+}
+
+h1.primary {
+	font-family: 'Share Tech Mono';
+	text-align: center;
+	font-size: 100px;
+	color: #555;
+	font-weight: 400;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.post {
+	background-color: #FFF;
+	width: 850px;
+	color: #444;
+	line-height: 150%;
+	margin-bottom: 50px;
+}
+
+.post header {
+	overflow: hidden;
+}
+
+.post header h1 {
+	margin: 0;
+	font-weight: 400;
+	font-size: 28px;
+}
+
+.post time {
+	font-family: 'Ubuntu Mono';
+	float: right;
+	line-height: 20px;
+	font-size: 16px;
+}
+
+.post .content {
+	padding: 15px;
+	padding-left: 70px;
+	font-size: 14px;
+}
+
+.post img {
+	width: 100%;
+}
+
+.post a.more,
+.post a:hover {
+	color: #258fb8;
+}
