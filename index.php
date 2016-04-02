@@ -22,7 +22,20 @@ foreach ($postPaths as $postPath) {
         $postTags[$tag]++;
     }
 
-
-    echo "<h1>".$post->getMeta()->title."</h1>";
-    echo "<time datetime='".date('c', $post->getMeta()->date)."'>".date('d/m/Y H:i', $post->getMeta()->date)."</time>";
+    ob_start();
+    include 'template/post/summary.php';
+    $posts[$post->getMeta()->date] = ob_get_clean();
 }
+
+
+// Sort by date order
+krsort($posts, SORT_NUMERIC);
+
+// Display the page
+include "template/head.html";
+
+foreach ($posts as $post) {
+    echo $post;
+}
+
+include "template/foot.html";
