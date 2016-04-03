@@ -6,10 +6,14 @@
     <div class="content">
         <header>
             <time datetime="<?= date('c', $post->getMeta()->date); ?>" itemprop="dateCreated">
-                <a href="<?= $post->getURL(); ?>" itemprop="url"><?= date('d-m-y', $post->getMeta()->date); ?></a>
+                <a href="<?= $post->getURL(); ?>" itemprop="url">
+                    <?= date('d-m-y', $post->getMeta()->date); ?>
+                </a>
             </time>
             <h1 class="title" itemprop="name">
-                <a href="<?= $post->getURL(); ?>" itemprop="url"><?= $post->getMeta()->title; ?></a>
+                <a href="<?= $post->getURL(); ?>" itemprop="url">
+                    <?= $post->getMeta()->title; ?>
+                </a>
             </h1>
         </header>
         <div>
