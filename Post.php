@@ -84,6 +84,9 @@ class Post
                 $metaRaw->tags = [];
             }
 
+            // Order the tags A-Z
+            asort($metaRaw->tags);
+
             $this->meta = $metaRaw;
 
         }
