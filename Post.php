@@ -84,6 +84,9 @@ class Post
                 $metaRaw->tags = [];
             }
 
+            // Make all tags lowercase
+            $metaRaw->tags = array_map('strtolower', $metaRaw->tags);
+
             // Order the tags A-Z
             asort($metaRaw->tags);
 
