@@ -96,14 +96,14 @@ a:hover {
 
 .tag::before {
 	content: "<";
-	font-size: 18px;
+	font-size: 120%;
 	color: #DDD;
 	padding-right: 6px;
 }
 
 .tag::after {
 	content: "/>";
-	font-size: 18px;
+	font-size: 120%;
 	color: #DDD;
 	padding-left: 6px;
 }
