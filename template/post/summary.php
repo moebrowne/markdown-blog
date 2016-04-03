@@ -16,6 +16,11 @@
             <?= $post->getAbstract(); ?>
         </div>
         <footer>
+            <div class="tags">
+                <?php foreach ($post->getMeta()->tags as $tagName) : ?>
+                    <div class="tag"><?= $tagName; ?></div>
+                <?php endforeach; ?>
+            </div>
             <div>
                 <a href="<?= $post->getURL(); ?>" class="more">Read More</a>
             </div>
