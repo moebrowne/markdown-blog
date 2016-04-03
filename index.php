@@ -27,8 +27,10 @@ foreach ($postPaths as $postPath) {
     $posts[$post->getMeta()->date] = ob_get_clean();
 }
 
+// Sort tags by name
+ksort($tags, SORT_NATURAL);
 
-// Sort by date order
+// Sort posts by date order
 krsort($posts, SORT_NUMERIC);
 
 // Display the page
