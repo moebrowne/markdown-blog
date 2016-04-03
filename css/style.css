@@ -62,7 +62,18 @@ a {
 	color: #258fb8;
 }
 
-.tags {
+.post .tags {
+	float: right;
+}
+
+.post .tag {
+	float: left;
+	margin-right: 8px;
+	color: #AAA;
+}
+
+
+#content > .tags {
 	position: absolute;
 	top: 0;
 	right: 0;
