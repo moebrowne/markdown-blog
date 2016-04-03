@@ -154,7 +154,7 @@ class Post
     {
         $html =  $this->getHTML();
 
-        $paras = explode('</p>', $html);
+        $paras = explode('<!-- more -->', $html);
 
         return $paras[0];
     }
