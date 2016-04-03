@@ -9,7 +9,7 @@ require 'vendor/autoload.php';
 require 'Post.php';
 
 $postPaths = glob('posts/*', GLOB_ONLYDIR);
-$postTags = [];
+$tags = [];
 
 foreach ($postPaths as $postPath) {
 
@@ -19,7 +19,7 @@ foreach ($postPaths as $postPath) {
 
     // Add this posts tags to the tag array
     foreach ($post->getMeta()->tags as $tag) {
-        $postTags[$tag]++;
+        $tags[$tag]++;
     }
 
     ob_start();
@@ -38,4 +38,5 @@ foreach ($posts as $post) {
     echo $post;
 }
 
+include "template/tags.php";
 include "template/foot.html";
