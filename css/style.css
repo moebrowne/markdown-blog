@@ -18,6 +18,10 @@ a {
 	color: inherit;
 }
 
+#content {
+	position: relative;
+}
+
 .post {
 	background-color: #FFF;
 	width: 850px;
@@ -56,4 +60,35 @@ a {
 .post a.more,
 .post a:hover {
 	color: #258fb8;
+}
+
+.tags {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 250px;
+	background-color: #FFF;
+	color: #444;
+	line-height: 150%;
+	padding: 16px;
+}
+
+.tag {
+	display: block;
+	text-transform: uppercase;
+	font-family: 'Ubuntu Mono';
+}
+
+.tag::before {
+	content: "<";
+	font-size: 18px;
+	color: #DDD;
+	padding-right: 6px;
+}
+
+.tag::after {
+	content: "/>";
+	font-size: 18px;
+	color: #DDD;
+	padding-left: 6px;
 }
