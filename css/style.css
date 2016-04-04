@@ -36,6 +36,17 @@ a:hover {
 	padding-right: 300px;
 }
 
+@media screen and (max-width: 900px) {
+	.posts {
+		float: none;
+		margin-right: 0;
+	}
+
+	.posts .wrapper {
+		padding-right: 0;
+	}
+}
+
 .post {
 	background-color: #FFF;
 	color: #444;
@@ -92,6 +103,13 @@ a:hover {
 	color: #444;
 	line-height: 150%;
 	padding: 16px;
+}
+
+@media screen and (max-width: 900px) {
+	#content > .tags {
+		float: none;
+		width: 100%;
+	}
 }
 
 .tag {
