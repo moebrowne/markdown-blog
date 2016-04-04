@@ -33,6 +33,12 @@ ksort($tags, SORT_NATURAL);
 // Sort posts by date order
 krsort($posts, SORT_NUMERIC);
 
+$pageLength =  5;
+$pageCount = ceil(count($posts)/$pageLength);
+$pageCurrent = $_GET['page'];
+
+$posts = array_slice($posts, $pageCurrent*$pageLength, $pageLength);
+
 // Display the page
 include "template/head.html";
 include "template/posts.php";

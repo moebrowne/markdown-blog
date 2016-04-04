@@ -5,5 +5,6 @@
         echo $post;
     }
     ?>
+    <?php include "template/pagination.php"; ?>
     </div>
 </div>
