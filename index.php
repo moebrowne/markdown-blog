@@ -36,13 +36,15 @@ krsort($posts, SORT_NUMERIC);
 // Display the page
 include "template/head.html";
 
-echo '<div class="posts">';
-echo '<div class="wrapper">';
+echo '
+<div class="posts">
+    <div class="wrapper">';
 foreach ($posts as $post) {
     echo $post;
 }
-echo '</div>';
-echo '</div>';
+echo '
+    </div>
+</div>';
 
 include "template/tags.php";
 include "template/foot.html";
