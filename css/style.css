@@ -41,6 +41,7 @@ a:hover {
 
 #content {
 	position: relative;
+	overflow: hidden;
 }
 
 .posts {
