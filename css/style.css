@@ -11,13 +11,22 @@ h1.primary {
 	font-size: 100px;
 	color: #555;
 	font-weight: 400;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 @media screen and (max-width: 930px) {
 	h1.primary {
-		display:block;
-		margin: 67px auto;
 		width: 500px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	h1.primary {
+		font-size: 55px;
+		max-width: 240px;
+		width: auto;
 	}
 }
 
