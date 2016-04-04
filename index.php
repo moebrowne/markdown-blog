@@ -22,6 +22,14 @@ foreach ($postPaths as $postPath) {
         $tags[$tag]++;
     }
 
+    // Check if we are filtering for a specific tag
+    // and if so drop posts that don't have the requested tag
+    if (empty($_GET['tag']) === false) {
+        if (in_array($_GET['tag'], $post->getMeta()->tags) === false) {
+            continue;
+        }
+    }
+
     ob_start();
     include 'template/post/summary.php';
     $posts[$post->getMeta()->date] = ob_get_clean();
