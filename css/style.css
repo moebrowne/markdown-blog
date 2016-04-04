@@ -126,6 +126,9 @@ a:hover {
 	#content > .tags {
 		float: none;
 		width: 100%;
+		-webkit-column-width: 140px;
+		-moz-column-width: 140px;
+		column-width: 140px;
 	}
 }
 
