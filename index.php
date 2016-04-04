@@ -33,7 +33,7 @@ ksort($tags, SORT_NATURAL);
 // Sort posts by date order
 krsort($posts, SORT_NUMERIC);
 
-$pageLength =  5;
+$pageLength = 5;
 $pageCount = ceil(count($posts)/$pageLength);
 $pageCurrent = $_GET['page'];
 
