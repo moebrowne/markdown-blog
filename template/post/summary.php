@@ -1,6 +1,8 @@
 <article class="post" itemscope="" itemtype="http://schema.org/blogPosting">
     <?php if ($post->getMeta()->images[0] !== null) : ?>
+    <a href="<?= $post->getURL(); ?>" itemprop="url">
         <img src="<?= $post->getMeta()->images[0]; ?>">
+    </a>
     <?php endif; ?>
 
     <div class="content">
