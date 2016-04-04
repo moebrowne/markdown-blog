@@ -26,9 +26,18 @@ a:hover {
 	position: relative;
 }
 
+.posts {
+	float: left;
+	width: 100%;
+	margin-right: -300px;
+}
+
+.posts .wrapper {
+	padding-right: 300px;
+}
+
 .post {
 	background-color: #FFF;
-	width: 850px;
 	color: #444;
 	line-height: 150%;
 	margin-bottom: 50px;
@@ -77,9 +86,7 @@ a:hover {
 
 
 #content > .tags {
-	position: absolute;
-	top: 0;
-	right: 0;
+	float: right;
 	width: 250px;
 	background-color: #FFF;
 	color: #444;
