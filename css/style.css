@@ -13,6 +13,14 @@ h1.primary {
 	font-weight: 400;
 }
 
+@media screen and (max-width: 930px) {
+	h1.primary {
+		display:block;
+		margin: 67px auto;
+		width: 500px;
+	}
+}
+
 a {
 	text-decoration: none;
 	color: inherit;
