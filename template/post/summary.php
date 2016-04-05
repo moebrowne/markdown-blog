@@ -24,7 +24,7 @@
         <footer>
             <div class="tags">
                 <?php foreach ($post->getMeta()->tags as $tagName) : ?>
-                    <div class="tag"><?= $tagName; ?></div>
+                    <a href="/tags/<?= $tagName; ?>" class="tag"><?= $tagName; ?></a>
                 <?php endforeach; ?>
             </div>
             <div>
