@@ -9,6 +9,8 @@
 </head>
 <body>
 
-<h1 class="primary">M0UNTAIN 0F C0DE</h1>
+<h1 class="primary">
+    <a href="/">M0UNTAIN 0F C0DE</a>
+</h1>
 
 <div id="content">
