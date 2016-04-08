@@ -159,7 +159,7 @@ class Post
         return $paras[0];
     }
 
-    public function getURL()
+    public function getURI()
     {
         return '/'.date('y/m/d', $this->getMeta()->date).'/'.str_replace(' ', '-', $this->getMeta()->title);
     }
