@@ -52,7 +52,7 @@ for ($pageSet = 0; $pageSet < $pageCount; $pageSet++) {
 // Generate the post pages
 foreach ($postArray as $postDate => $post) {
 
-    $pageURI = $post->getURI();
+    $pageURI = $post->getURI().'/index';
 
     ob_start();
     include "template/post/full.php";
