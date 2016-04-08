@@ -10,6 +10,8 @@ require 'Post.php';
 
 $postPaths = glob('posts/*', GLOB_ONLYDIR);
 $tags = [];
+$postArray = [];
+$HTMLPage = [];
 
 foreach ($postPaths as $postPath) {
 
@@ -17,38 +19,57 @@ foreach ($postPaths as $postPath) {
 
     $post = new Post($postName);
 
-    // Add this posts tags to the tag array
+    // Add this post to the tag array
     foreach ($post->getMeta()->tags as $tag) {
-        $tags[$tag]++;
+        $tags[$tag][] = $post;
     }
 
-    // Check if we are filtering for a specific tag
-    // and if so drop posts that don't have the requested tag
-    if (empty($_GET['tag']) === false) {
-        if (in_array($_GET['tag'], $post->getMeta()->tags) === false) {
-            continue;
-        }
-    }
-
-    ob_start();
-    include 'template/post/summary.php';
-    $posts[$post->getMeta()->date] = ob_get_clean();
+    $postArray[$post->getMeta()->date] = $post;
 }
 
 // Sort tags by name
 ksort($tags, SORT_NATURAL);
 
 // Sort posts by date order
-krsort($posts, SORT_NUMERIC);
+krsort($postArray, SORT_NUMERIC);
 
 $pageLength = 5;
-$pageCount = ceil(count($posts)/$pageLength);
-$pageCurrent = $_GET['page'];
+$pageCount = ceil(count($postArray)/$pageLength);
 
-$posts = array_slice($posts, $pageCurrent*$pageLength, $pageLength);
+// Generate each of the page sets
+for ($pageSet = 0; $pageSet < $pageCount; $pageSet++) {
 
-// Display the page
-include "template/head.html";
-include "template/posts.php";
-include "template/tags.php";
-include "template/foot.html";
+    // Get the posts for this page
+    $posts = array_slice($postArray, $pageSet*$pageLength, $pageLength);
+    $pageURI = ($pageSet === 0) ? '/index':'/page/' . $pageSet;
+
+    ob_start();
+    include "template/posts.php";
+    $HTMLPage[$pageURI] = ob_get_clean();
+
+}
+
+// Generate the post pages
+foreach ($postArray as $postDate => $post) {
+
+    $pageURI = $post->getURI();
+
+    ob_start();
+    include "template/post/full.php";
+    $HTMLPage[$pageURI] = ob_get_clean();
+}
+
+// Write the HTML to files
+foreach ($HTMLPage as $URI => $HTML) {
+
+    $filePath = './docroot' . $URI . '.html';
+    $fileDirectory = dirname($filePath);
+
+    if (is_dir($fileDirectory) === false) {
+        mkdir($fileDirectory, 0755, true);
+    }
+
+    echo 'WRITING '.mb_strlen($HTML).' bytes to: '.$filePath.'<br>';
+
+    file_put_contents($filePath, $HTML);
+}
