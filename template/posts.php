@@ -1,4 +1,4 @@
-<?php include "head.html"; ?>
+<?php include "includes/head.html"; ?>
 <div class="posts">
     <div class="wrapper">
     <?php
@@ -10,4 +10,4 @@
     </div>
 </div>
 <?php include "tags.php"; ?>
-<?php include "foot.html"; ?>
+<?php include "includes/foot.html"; ?>
