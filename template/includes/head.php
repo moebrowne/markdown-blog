@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Mountain Of Code</title>
 	<link href='https://fonts.googleapis.com/css?family=Share+Tech+Mono|Ubuntu+Mono|Ubuntu:400,700' rel='stylesheet' type='text/css'>
-	<link href='css/style.css' rel='stylesheet' type='text/css'>
-	<base href="https://www.mountainofcode.co.uk" />
+	<link href='/css/style.css' rel='stylesheet' type='text/css'>
+	<link href='/css/prism.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
