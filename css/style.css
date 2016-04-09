@@ -81,6 +81,10 @@ a:hover {
 	font-size: 28px;
 }
 
+.post footer {
+	overflow: hidden;
+}
+
 .post time {
 	font-family: 'Ubuntu Mono';
 	float: right;
