@@ -163,4 +163,26 @@ class Post
     {
         return '/'.date('Y/m/d', $this->getMeta()->date).'/'.str_replace(' ', '-', $this->getMeta()->title);
     }
+
+    public function hasBannerImage()
+    {
+        return file_exists('posts/' . $this->getName() . '/images/banner.jpg');
+    }
+
+    public function getBannerImage()
+    {
+        if ($this->hasBannerImage() === false) {
+            return false;
+        }
+
+        return $this->getURI().'/images/banner.jpg';
+    }
+
+    public function getBannerFilePath()
+    {
+        if ($this->hasBannerImage() === false) {
+            return false;
+        }
+        return 'posts/'.$this->getName().'/images/banner.jpg';
+    }
 }

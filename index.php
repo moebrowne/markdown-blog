@@ -13,6 +13,7 @@ $postPaths = glob('posts/*', GLOB_ONLYDIR);
 $tags = [];
 $postArray = [];
 $HTMLPage = [];
+$assets = [];
 
 foreach ($postPaths as $postPath) {
 
@@ -54,10 +55,15 @@ for ($pageSet = 0; $pageSet < $pageCount; $pageSet++) {
 foreach ($postArray as $postDate => $post) {
 
     $pageURI = $post->getURI().'/index';
+    $pageAssetsURI = $post->getURI().'/images';
 
     ob_start();
     include "template/post/full.php";
     $HTMLPage[$pageURI] = ob_get_clean();
+
+    if ($post->hasBannerImage()) {
+        $assets[$pageAssetsURI . '/banner.jpg'] = $post->getBannerFilePath();
+    }
 }
 
 // Write the HTML to files
@@ -70,7 +76,19 @@ foreach ($HTMLPage as $URI => $HTML) {
         mkdir($fileDirectory, 0755, true);
     }
 
-    echo 'WRITING '.mb_strlen($HTML).' bytes to: '.$filePath.'<br>';
+    echo 'WRITING '.mb_strlen($HTML).' bytes to: '.$filePath.PHP_EOL;
 
     file_put_contents($filePath, $HTML);
+}
+
+foreach ($assets as $URI => $assetPath) {
+    $assetsPath = './docroot' . $URI;
+    $assetsDirectory = dirname($assetsPath);
+
+    if (is_dir($assetsDirectory) === false) {
+        mkdir($assetsDirectory, 0755, true);
+    }
+
+    copy($assetPath, $assetsPath);
+    echo $assetPath.' => '.$assetsPath.PHP_EOL;
 }

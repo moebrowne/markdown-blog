@@ -2,9 +2,9 @@
     <div class="posts">
         <div class="wrapper">
             <article class="post" itemscope="" itemtype="http://schema.org/blogPosting">
-                <?php if ($post->getMeta()->images[0] !== null) : ?>
+                <?php if ($post->hasBannerImage()) : ?>
                     <a href="<?= $post->getURI(); ?>" itemprop="url">
-                        <img src="<?= $post->getMeta()->images[0]; ?>">
+                        <img src="<?= $post->getBannerImage(); ?>">
                     </a>
                 <?php endif; ?>
 
