@@ -1,7 +1,7 @@
 <?php namespace markdownBlog;
 
 use Exception;
-use Parsedown;
+use MardownBlog\Parsedown\ParsedownExtension;
 
 class Post
 {
@@ -145,7 +145,7 @@ class Post
      */
     private function generateHTML()
     {
-        $parsedown = new Parsedown();
+        $parsedown = new ParsedownExtension();
 
         return $parsedown->parse($this->getMarkdown());
     }
