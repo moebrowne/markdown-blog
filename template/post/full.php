@@ -30,9 +30,6 @@
                                 <a href="/tags/<?= $tagName; ?>" class="tag"><?= $tagName; ?></a>
                             <?php endforeach; ?>
                         </div>
-                        <div>
-                            <a href="<?= $post->getURI(); ?>" class="more">Read More</a>
-                        </div>
                     </footer>
                 </div>
             </article>        </div>
