@@ -1,8 +1,8 @@
 <div class="pagination">
-    <?php if(($pageCurrent+1) < $pageCount) : ?>
-        <a href="?<?= http_build_query([ 'page'  => $pageCurrent+1 ] + $_GET) ?>" class="next">Next &raquo;</a>
+    <?php if(($pageSet+1) < $pageCount) : ?>
+        <a href="/page/<?= $pageSet+1; ?>.html" class="next">Next &raquo;</a>
     <?php endif; ?>
-    <?php if($pageCurrent > 0) : ?>
-        <a href="?<?= http_build_query([ 'page'  => $pageCurrent-1 ] + $_GET) ?>" class="prev">&laquo; Prev</a>
+    <?php if($pageSet > 0) : ?>
+        <a href="/page/<?= $pageSet-1; ?>.html" class="prev">&laquo; Prev</a>
     <?php endif; ?>
 </div>
