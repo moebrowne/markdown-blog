@@ -1,7 +1,7 @@
 <?php include __DIR__."/../includes/head.php"; ?>
     <div class="posts">
         <div class="wrapper">
-            <article class="post"itemprop='blogPost' itemscope itemtype="http://schema.org/blogPosting">
+            <article itemid="<?= $post->getURI(); ?>" class="post" itemprop='blogPost' itemscope itemtype="http://schema.org/blogPosting">
                 <meta itemprop="wordcount" content="<?= $post->getWordCount(); ?>">
                 <?php if ($post->hasBannerImage()) : ?>
                     <a href="<?= $post->getURI(); ?>" itemprop="url">
