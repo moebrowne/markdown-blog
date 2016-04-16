@@ -1,4 +1,4 @@
-<article itemid="<?= $post->getURI(); ?>" class="post" itemprop='blogPost' itemscope itemtype="http://schema.org/blogPosting">
+<article itemid="<?= $post->getURI(); ?>" class="post" itemprop='blogPost' itemscope itemtype="http://schema.org/BlogPosting">
     <meta itemprop="wordcount" content="<?= $post->getWordCount(); ?>">
     <meta itemprop="datePublished" content="<?= date('c', $post->getMeta()->date); ?>">
     <meta itemprop="dateModified" content="<?= date('c', $post->getMeta()->date); ?>">
