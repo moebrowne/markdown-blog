@@ -9,5 +9,5 @@
     <?php include "pagination.php"; ?>
     </div>
 </div>
-<?php include "tags.php"; ?>
+<?php include "includes/tags.php"; ?>
 <?php include "includes/foot.php"; ?>

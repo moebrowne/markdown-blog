@@ -34,5 +34,5 @@
                 </div>
             </article>        </div>
     </div>
-<?php include __DIR__."/../tags.php"; ?>
+<?php include __DIR__."/../includes/tags.php"; ?>
 <?php include __DIR__."/../includes/foot.php"; ?>
