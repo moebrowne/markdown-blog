@@ -2,6 +2,7 @@
     <div class="posts">
         <div class="wrapper">
             <article class="post" itemscope="" itemtype="http://schema.org/blogPosting">
+                <meta itemprop="wordcount" content="<?= $post->getWordCount(); ?>">
                 <?php if ($post->hasBannerImage()) : ?>
                     <a href="<?= $post->getURI(); ?>" itemprop="url">
                         <div itemprop="image" itemscope itemtype="http://schema.org/imageObject">

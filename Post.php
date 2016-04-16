@@ -192,4 +192,9 @@ class Post
         }
         return 'posts/'.$this->getName().'/images/banner.jpg';
     }
+
+    public function getWordCount()
+    {
+        return str_word_count($this->getMarkdown());
+    }
 }
