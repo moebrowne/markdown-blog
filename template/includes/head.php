@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" itemscope itemtype="http://schema.org/Blog">
 <head>
 	<meta charset="UTF-8">
 	<title>Mountain Of Code</title>
