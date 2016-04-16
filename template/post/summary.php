@@ -23,7 +23,7 @@
                 </a>
             </h1>
         </header>
-        <div>
+        <div itemprop="<?= $post->hasMoreToRead() ? 'description':'articleBody'; ?>">
             <?= $post->getAbstract(); ?>
         </div>
         <footer>
