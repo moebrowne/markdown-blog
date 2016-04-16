@@ -21,7 +21,7 @@
                             </a>
                         </h1>
                     </header>
-                    <div>
+                    <div itemprop="articleBody">
                         <?= $post->getHTML(); ?>
                     </div>
                     <footer>
