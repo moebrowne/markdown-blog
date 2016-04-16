@@ -1,5 +1,7 @@
 <article itemid="<?= $post->getURI(); ?>" class="post" itemprop='blogPost' itemscope itemtype="http://schema.org/blogPosting">
     <meta itemprop="wordcount" content="<?= $post->getWordCount(); ?>">
+    <meta itemprop="datePublished" content="<?= date('c', $post->getMeta()->date); ?>">
+    <meta itemprop="dateModified" content="<?= date('c', $post->getMeta()->date); ?>">
     <?php if ($post->hasBannerImage()) : ?>
         <a href="<?= $post->getURI(); ?>" itemprop="url">
             <div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
