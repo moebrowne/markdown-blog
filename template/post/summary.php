@@ -27,9 +27,11 @@
                     <a href="/tags/<?= $tagName; ?>" class="tag"><?= $tagName; ?></a>
                 <?php endforeach; ?>
             </div>
+            <?php if ($post->hasMoreToRead()) : ?>
             <div>
                 <a href="<?= $post->getURI(); ?>" class="more">Read More</a>
             </div>
+            <?php endif; ?>
         </footer>
     </div>
 </article>

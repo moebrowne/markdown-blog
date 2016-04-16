@@ -17,6 +17,8 @@ class Post
     private $markdownHash;
     private $markdownExists;
 
+    private $abstractSeparator = '<!-- more -->';
+
     private $HTML;
 
     /**
@@ -150,11 +152,16 @@ class Post
         return $parsedown->parse($this->getMarkdown());
     }
 
+    public function hasMoreToRead()
+    {
+        return strpos($this->getHTML(), $this->abstractSeparator) !== false;
+    }
+
     public function getAbstract()
     {
         $html =  $this->getHTML();
 
-        $paras = explode('<!-- more -->', $html);
+        $paras = explode($this->abstractSeparator, $html);
 
         return $paras[0];
     }
