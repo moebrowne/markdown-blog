@@ -24,7 +24,9 @@
         <footer>
             <div class="tags">
                 <?php foreach ($post->getMeta()->tags as $tagName) : ?>
-                    <a href="/tags/<?= $tagName; ?>" class="tag"><?= $tagName; ?></a>
+                    <a href="/tags/<?= str_replace(' ', '-', $tagName); ?>" class="tag">
+                        <?= $tagName; ?>
+                    </a>
                 <?php endforeach; ?>
             </div>
             <?php if ($post->hasMoreToRead()) : ?>
