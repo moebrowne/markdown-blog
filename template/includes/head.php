@@ -9,6 +9,7 @@
     <?php require 'GoogleAnalytics.php'; ?>
     <meta property="og:site_name" itemprop="name" content="Mountain Of Code">
     <meta property="og:url" itemprop="url" content="https://www.mountainofcode.co.uk/">
+    <meta name="description" property="og:description" itemprop="description" content="Mountain of code is a collection of web and dev ops related projects mixed with a little hacking and tinkering.">
 </head>
 <body>
 
