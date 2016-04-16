@@ -22,7 +22,7 @@
                         </time>
                         <h1 class="title" itemprop="name">
                             <a href="<?= $post->getURI(); ?>" itemprop="url">
-                                <?= $post->getMeta()->title; ?>
+                                <span itemprop="headline"><?= $post->getMeta()->title; ?></span>
                             </a>
                         </h1>
                     </header>
