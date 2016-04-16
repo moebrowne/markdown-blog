@@ -28,6 +28,7 @@
                         <?= $tagName; ?>
                     </a>
                 <?php endforeach; ?>
+                <meta itemprop="keywords" content="<?= implode(',', $post->getMeta()->tags); ?>"/>
             </div>
             <?php if ($post->hasMoreToRead()) : ?>
             <div>
