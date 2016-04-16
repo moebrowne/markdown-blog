@@ -1,7 +1,11 @@
 <article class="post" itemscope="" itemtype="http://schema.org/blogPosting">
     <?php if ($post->hasBannerImage()) : ?>
         <a href="<?= $post->getURI(); ?>" itemprop="url">
-            <img src="<?= $post->getBannerImage(); ?>">
+            <div itemprop="image" itemscope itemtype="http://schema.org/imageObject">
+                <img itemprop="contentUrl" src="<?= $post->getBannerImage(); ?>">
+                <meta itemprop="representativeOfPage" content="true">
+                <meta itemprop="contentSize" content="<?= round(filesize($post->getBannerFilePath())/1024, 1); ?>KB">
+            </div>
         </a>
     <?php endif; ?>
 
