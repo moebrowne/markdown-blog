@@ -193,6 +193,20 @@ class Post
         return 'posts/'.$this->getName().'/images/banner.jpg';
     }
 
+    public function getBannerWidth()
+    {
+        $imageSizes = getimagesize($this->getBannerFilePath());
+
+        return ($imageSizes) ? $imageSizes[0]:false;
+    }
+
+    public function getBannerHeight()
+    {
+        $imageSizes = getimagesize($this->getBannerFilePath());
+
+        return ($imageSizes) ? $imageSizes[1]:false;
+    }
+
     public function getWordCount()
     {
         return str_word_count($this->getMarkdown());

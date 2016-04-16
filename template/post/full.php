@@ -5,10 +5,12 @@
                 <meta itemprop="wordcount" content="<?= $post->getWordCount(); ?>">
                 <?php if ($post->hasBannerImage()) : ?>
                     <a href="<?= $post->getURI(); ?>" itemprop="url">
-                        <div itemprop="image" itemscope itemtype="http://schema.org/imageObject">
-                            <img itemprop="contentUrl" src="<?= $post->getBannerImage(); ?>">
+                        <div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+                            <img itemprop="url" src="<?= $post->getBannerImage(); ?>">
                             <meta itemprop="representativeOfPage" content="true">
                             <meta itemprop="contentSize" content="<?= round(filesize($post->getBannerFilePath())/1024, 1); ?>KB">
+                            <meta itemprop="width" content="<?= $post->getBannerWidth(); ?>px">
+                            <meta itemprop="height" content="<?= $post->getBannerHeight(); ?>px">
                         </div>
                     </a>
                 <?php endif; ?>
