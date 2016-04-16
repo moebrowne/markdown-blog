@@ -5,6 +5,10 @@
                 <meta itemprop="wordcount" content="<?= $post->getWordCount(); ?>">
                 <meta itemprop="datePublished" content="<?= date('c', $post->getMeta()->date); ?>">
                 <meta itemprop="dateModified" content="<?= date('c', $post->getMeta()->date); ?>">
+                <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    <meta itemprop="name" content="MoeBrowne">
+                </div>
+                <meta itemprop="mainEntityOfPage" content="<?= $post->getURI(); ?>">
                 <?php if ($post->hasBannerImage()) : ?>
                     <a href="<?= $post->getURI(); ?>" itemprop="url">
                         <div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
@@ -24,9 +28,9 @@
                                 <?= date('d-m-y', $post->getMeta()->date); ?>
                             </a>
                         </time>
-                        <h1 class="title" itemprop="name">
+                        <h1 class="title" itemprop="headline">
                             <a href="<?= $post->getURI(); ?>" itemprop="url">
-                                <span itemprop="headline"><?= $post->getMeta()->title; ?></span>
+                                <?= $post->getMeta()->title; ?>
                             </a>
                         </h1>
                     </header>
