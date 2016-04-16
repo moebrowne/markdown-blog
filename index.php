@@ -48,6 +48,10 @@ for ($pageSet = 0; $pageSet < $pageCount; $pageSet++) {
     $posts = array_slice($postArray, $pageSet*$pageLength, $pageLength);
     $pageURI = ($pageSet === 0) ? '/index':'/page/' . $pageSet;
 
+    // Determine the links to the previous and next pages
+    $paginationLinkPrev = ($pageSet-1 === 0) ?  '/index.html':'/page/' . ($pageSet-1) . '.html';
+    $paginationLinkNext = '/page/' . ($pageSet+1) . '.html';
+
     ob_start();
     include "template/posts.php";
     $HTMLPage[$pageURI] = ob_get_clean();
