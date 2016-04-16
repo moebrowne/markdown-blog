@@ -6,6 +6,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Share+Tech+Mono|Ubuntu+Mono|Ubuntu:400,700' rel='stylesheet' type='text/css'>
 	<link href='/css/style.css' rel='stylesheet' type='text/css'>
 	<link href='/css/prism.css' rel='stylesheet' type='text/css'>
+    <?php require 'GoogleAnalytics.php'; ?>
 </head>
 <body>
 
