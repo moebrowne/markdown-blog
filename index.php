@@ -6,7 +6,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 ini_set('display_errors', true);
 
 require 'vendor/autoload.php';
-include 'ParsedownExtension.php';
+require 'ParsedownExtension.php';
 require 'Post.php';
 
 $postPaths = glob('posts/*', GLOB_ONLYDIR);
