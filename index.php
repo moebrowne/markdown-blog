@@ -21,19 +21,22 @@ foreach ($postPaths as $postPath) {
 
     $post = new Post($postName);
 
+    $postArray[$post->getMeta()->date] = $post;
+}
+
+// Sort posts by date order
+krsort($postArray, SORT_NUMERIC);
+
+// Extract all the tags from the posts
+foreach ($postArray as $post) {
     // Add this post to the tag array
     foreach ($post->getMeta()->tags as $tag) {
         $tags[$tag][] = $post;
     }
-
-    $postArray[$post->getMeta()->date] = $post;
 }
 
 // Sort tags by name
 ksort($tags, SORT_NATURAL);
-
-// Sort posts by date order
-krsort($postArray, SORT_NUMERIC);
 
 $pageLength = 5;
 $pageCount = ceil(count($postArray)/$pageLength);
@@ -64,6 +67,16 @@ foreach ($postArray as $postDate => $post) {
     if ($post->hasBannerImage()) {
         $assets[$pageAssetsURI . '/banner.jpg'] = $post->getBannerFilePath();
     }
+}
+
+// Generate the tag index pages
+foreach ($tags as $tag => $posts) {
+
+    $pageURI = '/tags/'.str_replace(' ', '-', $tag).'/index';
+
+    ob_start();
+    include "template/tags.php";
+    $HTMLPage[$pageURI] = ob_get_clean();
 }
 
 // Write the HTML to files
