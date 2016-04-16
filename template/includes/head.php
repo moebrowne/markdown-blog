@@ -7,6 +7,8 @@
 	<link href='/css/style.css' rel='stylesheet' type='text/css'>
 	<link href='/css/prism.css' rel='stylesheet' type='text/css'>
     <?php require 'GoogleAnalytics.php'; ?>
+    <meta property="og:site_name" content="Mountain Of Code">
+    <meta property="og:url" itemprop="url" content="https://www.mountainofcode.co.uk/">
 </head>
 <body>
 
