@@ -2,9 +2,6 @@
 
 use markdownBlog\Post;
 
-error_reporting(E_ALL & ~E_NOTICE);
-ini_set('display_errors', true);
-
 require 'vendor/autoload.php';
 require 'ParsedownExtension.php';
 require 'Post.php';
