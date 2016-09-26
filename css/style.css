@@ -6,6 +6,7 @@ body {
 }
 
 h1.primary {
+	position: relative;
 	font-family: 'Share Tech Mono';
 	text-align: center;
 	font-size: 100px;
