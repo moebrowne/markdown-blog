@@ -43,6 +43,8 @@ a:hover {
 #content {
 	position: relative;
 	overflow: hidden;
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
 .posts {
