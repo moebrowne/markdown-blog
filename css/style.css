@@ -136,6 +136,7 @@ a:hover {
 
 .post img {
 	width: 100%;
+	height: auto;
 }
 
 .post a.more {
