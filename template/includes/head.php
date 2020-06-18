@@ -12,6 +12,7 @@
     <meta name="description" property="og:description" itemprop="description" content="Mountain of code is a collection of web and dev ops related projects mixed with a little hacking and tinkering.">
 </head>
 <body>
+<canvas id="hexGrid" style="position: fixed;top:0;left:0;"></canvas>
 
 <h1 class="primary">
     <a href="/">M0UNTAIN 0F C0DE</a>
