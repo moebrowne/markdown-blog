@@ -17,16 +17,16 @@ h1.primary {
 	margin-right: auto;
 }
 
-@media screen and (max-width: 930px) {
+@media screen and (max-device-width: 930px) {
 	h1.primary {
 		width: 500px;
 	}
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-device-width: 560px) {
 	h1.primary {
 		font-size: 55px;
-		max-width: 240px;
+		max-device-width: 240px;
 		width: auto;
 	}
 }
@@ -43,7 +43,7 @@ a:hover {
 #content {
 	position: relative;
 	overflow: hidden;
-	max-width: 1200px;
+	max-device-width: 1200px;
 	margin: 0 auto;
 }
 
@@ -56,8 +56,7 @@ a:hover {
 .posts .wrapper {
 	padding-right: 300px;
 }
-
-@media screen and (max-width: 900px) {
+@media screen and (max-device-width: 900px) {
 	.posts {
 		float: none;
 		margin-right: 0;
@@ -147,7 +146,7 @@ a:hover {
 	padding: 16px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-device-width: 900px) {
 	#content > .tags {
 		float: none;
 		width: 100%;
