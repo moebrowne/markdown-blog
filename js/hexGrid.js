@@ -162,3 +162,5 @@ var hexGrid = {
 function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+hexGrid.init(document.getElementById("hexGrid"));
