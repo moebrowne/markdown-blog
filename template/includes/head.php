@@ -3,7 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Mountain Of Code</title>
-	<link href='https://fonts.googleapis.com/css?family=Share+Tech+Mono|Ubuntu+Mono|Ubuntu:400,700' rel='stylesheet' type='text/css'>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Share+Tech+Mono|Ubuntu+Mono|Ubuntu:400,700&display=swap" />
+	<link href='https://fonts.googleapis.com/css?family=Share+Tech+Mono|Ubuntu+Mono|Ubuntu:400,700&display=swap' rel='stylesheet' type='text/css'>
 	<link href='/css/style.css' rel='stylesheet' type='text/css'>
 	<link href='/css/prism.css' rel='stylesheet' type='text/css'>
     <?php if(empty($GoogleAnalyticsUA) === false) { require 'GoogleAnalytics.php'; } ?>
