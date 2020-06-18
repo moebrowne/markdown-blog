@@ -94,6 +94,12 @@ a:hover {
 	font-size: 16px;
 }
 
+@media screen and (max-device-width: 560px) {
+	.post time {
+		display: none;
+	}
+}
+
 .post .content {
 	padding: 15px;
 	padding-left: 70px;
