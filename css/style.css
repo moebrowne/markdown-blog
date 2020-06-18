@@ -122,6 +122,10 @@ a:hover {
 	border-radius: 4px;
 }
 
+.post .content p a {
+	color: #258fb8;
+}
+
 .post .content pre {
 	padding: 12px 12px 12px 70px;
 	background-color: #444;
