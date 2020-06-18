@@ -35,6 +35,9 @@
             <?= $post->getAbstract(); ?>
         </div>
         <footer>
+            <?php if ($post->hasMoreToRead()) : ?>
+                <a href="<?= $post->getURI(); ?>" class="more">Read More</a>
+            <?php endif; ?>
             <div class="tags">
                 <?php foreach ($post->getMeta()->tags as $tagName) : ?>
                     <a href="/tags/<?= str_replace(' ', '-', $tagName); ?>" class="tag">
@@ -43,11 +46,6 @@
                 <?php endforeach; ?>
                 <meta itemprop="keywords" content="<?= implode(',', $post->getMeta()->tags); ?>"/>
             </div>
-            <?php if ($post->hasMoreToRead()) : ?>
-            <div>
-                <a href="<?= $post->getURI(); ?>" class="more">Read More</a>
-            </div>
-            <?php endif; ?>
         </footer>
     </div>
 </article>
