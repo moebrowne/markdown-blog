@@ -9,7 +9,7 @@
     <?php if ($post->hasBannerImage()) : ?>
         <a href="<?= $post->getURI(); ?>" itemprop="url">
             <div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-                <img itemprop="url" src="<?= $post->getBannerImage(); ?>">
+                <img itemprop="url" src="<?= $post->getBannerImage(); ?>" loading="lazy">
                 <meta itemprop="representativeOfPage" content="true">
                 <meta itemprop="contentSize" content="<?= round(filesize($post->getBannerFilePath())/1024, 1); ?>KB">
                 <meta itemprop="width" content="<?= $post->getBannerWidth(); ?>px">
