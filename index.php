@@ -7,7 +7,7 @@ require 'ParsedownExtension.php';
 require 'Post.php';
 
 // Config
-$GoogleAnalyticsUA = 'UA-61706759-1';
+//$GoogleAnalyticsUA = 'UA-61706759-1';
 
 
 $postPaths = glob('posts/*', GLOB_ONLYDIR);
